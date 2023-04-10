@@ -18,6 +18,10 @@ def get_nearest_questions(text, n=5):
     return top_responses
 
 
+@app.route('/', methods=['GET'])
+def default_page():
+    return "Welcome to the backend."
+
 @app.route('/ask', methods=['POST'])
 def ask_question():
     data = json.loads(request.get_json())
